@@ -1,0 +1,26 @@
+{% extends 'myapp/base.html' %}
+
+{% block body %}
+<div >
+     {% for item in item_list %}
+    <div class="m-10 flex bg-green-100 w-1/2 mx-auto rounded-lg" >
+        <div>
+            <img class="w-64 rounded-lg" src="{{item.item_image}}" alt="">
+        </div>
+        <div>
+            <div class="font-bold">{{item.item_name}}</div>
+             <div> {{item.item_desc}} </div>
+
+        </div>
+                     <div>
+                 <!-- passing url with id to fetch product data 
+            removing hardcore url  -->
+                <a class="bg-blue-600 font-bold px-4 py-2 rounded-md" href="{% url 'detail' item.id %}">View Details</a>
+             </div>
+    </div>
+     {% endfor %}
+</div>
+   
+    {% endblock %}
+
+   
