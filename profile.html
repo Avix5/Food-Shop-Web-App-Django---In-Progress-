@@ -1,0 +1,29 @@
+{% extends 'myapp/base.html' %}
+{% block body %}
+<!-- <h1>{{user.username}}</h1>
+<img src="{{user.profile.image.url}}" alt=""> -->
+
+<!-- {{user.profile.image.url}} this line because user is inbuilgt class and profile we defined this and and we linked both so user taking access to profile and giving img -->
+
+
+    <div class="bg-white shadow-lg rounded-2xl p-6 w-80 text-center">
+        
+        <!-- Profile Image -->
+        <div class="flex justify-center">
+            <img src="{{ user.profile.image.url }}" 
+                 alt="Profile Image"
+                 class="w-24 h-24 rounded-full object-cover border-4 border-blue-500">
+        </div>
+
+        <!-- Username -->
+        <h2 class="mt-4 text-xl font-semibold text-gray-800">
+            {{ user.username }}
+        </h2>
+
+        <!-- Location -->
+        <p class="text-gray-500 mt-2">
+            📍 {{ user.profile.location }}
+        </p>
+
+    </div>
+{% endblock %}
